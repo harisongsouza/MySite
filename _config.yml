@@ -1,0 +1,47 @@
+name: Harison Souza
+# permalink: /:title/
+# baseurl: https://harisonsouza.com
+# baseurl: ""
+permalink: /blog/:title
+
+# seo tag
+plugins:
+  - jekyll-seo-tag
+
+# Google Analytics
+google_analytics: G-TEEDE1GB8S
+
+title: Harison Souza
+author: Harison Souza
+description: "Software Developer<br> Backend"
+description2: ""
+
+# Caminho para sua foto de perfil (coloque a imagem na pasta /assets/img/)
+avatar: /img/avatar.jpg
+
+# Links das redes sociais
+social:
+  - name: GitHub
+    type: fab  # <-- Adicione essa linha
+    icon: fa-github
+    url: "https://github.com/harison"
+  - name: YouTube
+    type: fab  # <-- Adicione essa linha
+    icon: fa-youtube
+    url: "https://www.youtube.com/channel/..."
+  - name: Instagram
+    type: fab  # <-- Adicione essa linha
+    icon: fa-instagram
+    url: "https://instagram.com/harison"
+  - name: Linkedin
+    type: fab  # <-- Note que aqui é 'fas' para o envelope
+    icon: fa-linkedin
+    url: "mailto:me@harison.com"
+  - name: Tiktok
+    type: fab  # <-- Note que aqui é 'fas' para o envelope
+    icon: fa-tiktok
+    url: "mailto:me@harison.com"
+  - name: Email
+    type: fas  # <-- Note que aqui é 'fas' para o envelope
+    icon: fa-envelope
+    url: "mailto:me@harison.com"

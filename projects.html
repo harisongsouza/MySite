@@ -1,0 +1,272 @@
+---
+layout: page
+title: Projects
+---
+
+<head>
+    <style>
+        /* --- INÍCIO: Seção Adicional de Projetos --- */
+
+
+        /* Images could be 
+         "710x520"(to view full image in frame),
+         "1280x720"(hd with borders blue),
+         "1920x1080" (full hd in frame with ble borders) 
+        */
+
+        /* --- Seções Genéricas --- */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: var(--cor-branco);
+        }
+
+        /* Estrutura de layout para a lista de projetos */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 64px; /* Espaçamento entre os projetos */
+            max-width: 1200px; /* Limita a largura para melhor leitura */
+            margin: 0 auto; /* Centraliza a lista de projetos */
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; /* Proporção imagem / texto */
+            gap: 48px;
+            align-items: center;
+        }
+
+        /* Alterna a ordem da imagem e do texto para criar um layout dinâmico */
+        .project:nth-child(even) {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        .project:nth-child(even) .thumb {
+            order: 2;
+        }
+
+        .project:nth-child(even) .meta {
+            order: 1;
+        }
+
+        /* Estilo para a imagem do projeto */
+        /* Estilo para a imagem do projeto (com altura corrigida) */
+        .project .thumb {
+            height: 520px; /* <<< ALTURA ADICIONADA PARA IGUALAR AO ORIGINAL */
+            width: 710px;
+            background-color: #007bff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra-padrao);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project .thumb:hover {
+            transform: scale(1.03);
+        }
+
+        .project .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Estilo para a área de texto (metadados do projeto) */
+        .project .meta {
+            padding: 0;
+        }
+
+        .project .kicker {
+            display: inline-block;
+            font-size: 13px;
+            color: #888; /* Usa um cinza neutro que funciona bem no tema claro */
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* O título do projeto (h3) herdará o estilo padrão de h3 da sua página */
+        .project .title {
+            font-size: 1.8rem;
+            margin: 0 0 10px;
+        }
+
+        /* A descrição (p) herdará o estilo padrão de p da sua página */
+        .project .desc {
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .project .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        /* Estilo para as tags, usando cores neutras do tema principal */
+        .project .tag {
+            background-color: #eef2f5; /* Um cinza bem claro */
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--cor-secundaria); /* Usa a cor de texto secundária já definida */
+            font-weight: 500;
+        }
+
+        .project .actions {
+            display: flex;
+            gap: 14px;
+        }
+
+        /* Estilo para os botões, criado para se harmonizar com o seu tema */
+        .project .btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--cor-secundaria);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        /* Botão primário (com destaque) */
+        .project .btn.primary {
+            border-color: var(--cor-primaria);
+            color: var(--cor-primaria);
+        }
+
+        .project .btn:hover {
+            background-color: #f8f9fa; /* Usa a cor de fundo claro no hover */
+            border-color: #ccc;
+        }
+
+        .project .btn.primary:hover {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            border-color: var(--cor-primaria);
+        }
+
+
+        /* --- Responsividade para a nova seção de projetos --- */
+        /* --- Responsividade para a nova seção de projetos --- */
+        @media (max-width: 900px) { /* Ajustado para 900px como no seu original */
+            .project,
+            .project:nth-child(even) {
+                grid-template-columns: 1fr; /* Coloca imagem e texto em coluna única */
+            }
+
+            .project .thumb {
+                height: 340px; /* <<< ALTURA REDUZIDA PARA TELAS MENORES */
+            }
+
+            .project:nth-child(even) .thumb,
+            .project:nth-child(even) .meta {
+                order: initial; /* Reseta a ordem da imagem e texto no mobile */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section id="projects" class="section section-light">
+            <div class="container">
+                <div class="projects-list">
+
+                    <article class="project">
+                        <div class="thumb">
+                        <a href="#" title="Ver detalhes do Projeto A">
+                            <!-- "1920x1080" (full hd in frame with ble borders) -->
+                            <img src="img/netfly.jpg" alt="Thumb do projeto A">
+                        </a>
+                        </div>
+                        <div class="meta">
+                        <div class="kicker">Aplicação web</div>
+                        <h3 class="title">Painel Analítico de Vendas</h3>
+                        <p class="desc">Dashboard de métricas com streaming de eventos, autenticação via OAuth2 e visualizações interativas. Concebido para suportar múltiplos tenants e alta carga.</p>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">Postgres</span>
+                        </div>
+                        <div class="actions">
+                            <a class="btn primary" href="#">Ver demo</a>
+                            <a class="btn" href="#">Código (GitHub)</a>
+                        </div>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="thumb">
+                            <a href="#" title="Ver detalhes do Projeto B">
+                                <!-- "1280x720"(hd with borders blue) -->
+                                <img src="img/vaporwave.jpg" alt="Thumb do projeto A">
+                            </a>
+                        </div>
+                        <div class="meta">
+                            <div class="kicker">Microserviços</div>
+                            <h3 class="title">Plataforma de Agendamento</h3>
+                            <p class="desc">Conjunto de microserviços com deploy automatizado, testes end-to-end e monitoramento com Prometheus + Grafana. Projeto focado em resiliência e deploy contínuo.</p>
+                            <div class="tags">
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <div class="actions">
+                                <a class="btn primary" href="#">Ver arquitetura</a>
+                                <a class="btn" href="#">Código (GitHub)</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                                        <article class="project">
+                        <div class="thumb">
+                            <a href="#" title="Ver detalhes do Projeto B">
+                                <!-- "1280x720"(hd with borders blue) -->
+                                <img src="img/vaporwave.jpg" alt="Thumb do projeto A">
+                            </a>
+                        </div>
+                        <div class="meta">
+                            <div class="kicker">Microserviços</div>
+                            <h3 class="title">Plataforma de Agendamento</h3>
+                            <p class="desc">Conjunto de microserviços com deploy automatizado, testes end-to-end e monitoramento com Prometheus + Grafana. Projeto focado em resiliência e deploy contínuo.</p>
+                            <div class="tags">
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <div class="actions">
+                                <a class="btn primary" href="#">Ver arquitetura</a>
+                                <a class="btn" href="#">Código (GitHub)</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+<!-- Images could be 
+"710x520"(to view full image in frame),
+"1280x720"(hd with borders blue),
+"1920x1080" (full hd in frame with ble borders) 
+-->

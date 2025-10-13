@@ -13,7 +13,8 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png"> -->
-    <link href="/img/favicon.ico" rel="icon">
+    <link rel="icon" href="{{ '/css/default.css' | relative_url }}">
+
 
     <title>{{page.title}}</title>
 
@@ -25,8 +26,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-
-    <link href="/css/default.css" rel="stylesheet" type="text/css">
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
@@ -79,8 +78,7 @@
         });
     </script>
 
-
-    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="{{ '/js/main.js' | relative_url }}"></script>
 </body>
 
 </html>

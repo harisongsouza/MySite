@@ -1,7 +1,7 @@
 name: Harison Souza
 # permalink: /:title/
 # baseurl: https://harisonsouza.com
-# baseurl: ""
+baseurl: "/MySite"
 permalink: /blog/:title
 
 # seo tag

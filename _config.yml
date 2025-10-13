@@ -13,7 +13,9 @@ google_analytics: G-TEEDE1GB8S
 
 title: Harison Souza
 author: Harison Souza
-description: "Software Developer<br> Backend"
+#description: "Software Developer<br> Backend"
+description: "Software Developer"
+
 description2: ""
 
 # Caminho para sua foto de perfil (coloque a imagem na pasta /assets/img/)

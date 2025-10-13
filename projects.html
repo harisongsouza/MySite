@@ -14,6 +14,14 @@ title: Projects
          "1920x1080" (full hd in frame with ble borders) 
         */
 
+        :root {
+            --cor-primaria: #007bff; /* Azul vibrante */
+            --cor-secundaria: #343a40; /* Cinza escuro para texto */
+            --cor-fundo: #f8f9fa; /* Fundo levemente cinza */
+            --cor-branco: #ffffff;
+            --sombra-padrao: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         /* --- Seções Genéricas --- */
         .section {
             padding: 80px 0;
@@ -22,6 +30,8 @@ title: Projects
         .section-light {
             background-color: var(--cor-branco);
         }
+
+        /* --- INÍCIO: CSS CORRIGIDO APENAS PARA A SEÇÃO DE PROJETOS --- */
 
         /* Estrutura de layout para a lista de projetos */
         .projects-list {
@@ -34,7 +44,7 @@ title: Projects
 
         .project {
             display: grid;
-            grid-template-columns: 1.5fr 1fr; /* Proporção imagem / texto */
+            grid-template-columns: 1.5fr 1fr; /* Proporção imagem / texto em desktop */
             gap: 48px;
             align-items: center;
         }
@@ -52,19 +62,17 @@ title: Projects
             order: 1;
         }
 
-        /* Estilo para a imagem do projeto */
         /* Estilo para a imagem do projeto (com altura corrigida) */
         .project .thumb {
-            height: 520px; /* <<< ALTURA ADICIONADA PARA IGUALAR AO ORIGINAL */
-            width: 710px;
+            /* <<< CORREÇÃO PRINCIPAL: REMOVIDAS LARGURA E ALTURA FIXAS */
+            width: 100%; /* A imagem ocupará 100% do espaço da sua coluna no grid */
+            aspect-ratio: 16 / 10; /* Mantém a proporção da imagem (16:10) em QUALQUER tamanho */
+
             background-color: #007bff;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--sombra-padrao);
             transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .project .thumb:hover {
@@ -86,19 +94,17 @@ title: Projects
         .project .kicker {
             display: inline-block;
             font-size: 13px;
-            color: #888; /* Usa um cinza neutro que funciona bem no tema claro */
+            color: #888;
             margin-bottom: 10px;
             font-weight: bold;
             text-transform: uppercase;
         }
 
-        /* O título do projeto (h3) herdará o estilo padrão de h3 da sua página */
         .project .title {
             font-size: 1.8rem;
             margin: 0 0 10px;
         }
 
-        /* A descrição (p) herdará o estilo padrão de p da sua página */
         .project .desc {
             line-height: 1.7;
             margin-bottom: 24px;
@@ -112,13 +118,12 @@ title: Projects
             margin-bottom: 24px;
         }
 
-        /* Estilo para as tags, usando cores neutras do tema principal */
         .project .tag {
-            background-color: #eef2f5; /* Um cinza bem claro */
+            background-color: #eef2f5;
             padding: 6px 12px;
             border-radius: 8px;
             font-size: 13px;
-            color: var(--cor-secundaria); /* Usa a cor de texto secundária já definida */
+            color: var(--cor-secundaria);
             font-weight: 500;
         }
 
@@ -127,7 +132,6 @@ title: Projects
             gap: 14px;
         }
 
-        /* Estilo para os botões, criado para se harmonizar com o seu tema */
         .project .btn {
             padding: 10px 16px;
             border-radius: 8px;
@@ -141,14 +145,13 @@ title: Projects
             transition: all 0.2s ease;
         }
 
-        /* Botão primário (com destaque) */
         .project .btn.primary {
             border-color: var(--cor-primaria);
             color: var(--cor-primaria);
         }
 
         .project .btn:hover {
-            background-color: #f8f9fa; /* Usa a cor de fundo claro no hover */
+            background-color: #f8f9fa;
             border-color: #ccc;
         }
 
@@ -158,25 +161,22 @@ title: Projects
             border-color: var(--cor-primaria);
         }
 
-
         /* --- Responsividade para a nova seção de projetos --- */
-        /* --- Responsividade para a nova seção de projetos --- */
-        @media (max-width: 900px) { /* Ajustado para 900px como no seu original */
+        @media (max-width: 900px) {
             .project,
             .project:nth-child(even) {
                 grid-template-columns: 1fr; /* Coloca imagem e texto em coluna única */
+                gap: 32px; /* Reduz o espaçamento entre imagem e texto no mobile */
             }
 
-            .project .thumb {
-                height: 340px; /* <<< ALTURA REDUZIDA PARA TELAS MENORES */
-            }
+            /* <<< CORREÇÃO: Não precisamos mais definir a altura aqui, pois o aspect-ratio já cuida disso. */
+            /* .project .thumb { height: 340px; } <<< LINHA REMOVIDA */
 
             .project:nth-child(even) .thumb,
             .project:nth-child(even) .meta {
                 order: initial; /* Reseta a ordem da imagem e texto no mobile */
             }
         }
-
 
     </style>
 </head>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Arabesques: A Science-Inspired Generative Art Project"
+title: "Why Math Is So Important For Programming?"
 description: I created Arabesques in my free time. Arabesques is a generative art project inspired by scientific principles.
 summary: The story behind Arabesques.
 tags: Generative Art, NFT

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What I Learned Teaching 20 High School Girls How to Code
+title: What I Learned Working On The Software Engineering Team At Brazil's First Billion-Dollar Startup.
 description: This summer I taught 20 high school girls how to program in Python, starting from scratch. Here's what I learned!
 summary: Here's what I learned teaching 20 girls how to code.
 tags: learntocode

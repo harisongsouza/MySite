@@ -1,0 +1,34 @@
+<section id="certificados" class="section section-light">
+    <div class="container">
+        <h2>Certifications</h2>
+
+        <div class="swiper certificate-swiper">
+            <div class="swiper-wrapper">
+                {% for cert in site.data.certificados %}
+                <div class="swiper-slide">
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="{{ cert.image | relative_url }}" alt="{{ cert.title }}">
+                        </div>
+                        <div class="cert-content">
+                            <h3>{{ cert.title }}</h3>
+                            <p class="issuer"><i class="fas fa-university"></i> {{ cert.issuer }}</p>
+                            <p class="date"><i class="far fa-calendar-alt"></i> {{ cert.date }}</p>
+                            {% if cert.link and cert.link != "#" %}
+                            <a href="{{ cert.link }}" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                Ver Credencial <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-prev hide-mobile"></div>
+            <div class="swiper-button-next hide-mobile"></div>
+        </div>
+    </div>
+</section>

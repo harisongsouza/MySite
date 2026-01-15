@@ -3,6 +3,8 @@ layout: page
 title: Resume
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 <head>
     <style>
         /* --- Reset Básico e Estilos Globais --- */
@@ -557,6 +559,104 @@ title: Resume
             top: -20px;
         }
 
+
+
+
+
+
+
+        /* --- Seção Certificados (Carrossel) --- */
+        #certificados {
+            overflow: hidden; /* Importante para o carrossel não vazar */
+        }
+
+        .cert-card {
+            background: var(--cor-branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra-padrao);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Garante que todos os cards tenham a mesma altura */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .cert-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Corta a imagem para preencher o espaço sem esticar */
+            transition: transform 0.5s ease;
+        }
+
+        .cert-card:hover .cert-image img {
+            transform: scale(1.05); /* Leve zoom na imagem ao passar o mouse */
+        }
+
+        .cert-content {
+            padding: 20px;
+            flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--cor-secundaria);
+            font-weight: 600;
+        }
+
+        .cert-content p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-content p i {
+            color: var(--cor-primaria);
+            font-size: 0.8rem;
+        }
+
+        .cert-link {
+            margin-top: auto; /* Empurra o link para o final do card */
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding-top: 15px;
+        }
+
+        .cert-link i {
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Ajustes do Swiper */
+        .swiper-pagination-bullet-active {
+            background-color: var(--cor-primaria) !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--cor-primaria) !important;
+        }
+
+        @media (max-width: 768px) {
+            .hide-mobile {
+               display: none !important; /* Esconde as setas no celular para ficar mais limpo */
+            }
+        }
     </style>
 </head>
 <body>
@@ -564,12 +664,58 @@ title: Resume
         
 	{% include resume-sections/journey.html %}
         {% include resume-sections/skills.html %}
+        {% include resume-sections/certificates.html %}
         {% include resume-sections/experience.html %}
         {% include resume-sections/resume-projects.html %}
 
     <a href="{{ '/assets/pdf/meu-curriculo.pdf' | relative_url }}" class="btn-floating-download" target="_blank" rel="noopener noreferrer" data-tooltip="Baixar Curriculo">
         <i class="fas fa-download"></i>
     </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Inicialização do Carrossel de Certificados
+        const swiper = new Swiper('.certificate-swiper', {
+            // Parâmetros opcionais
+            slidesPerView: 1, // Quantos cards por vez no celular
+            spaceBetween: 20, // Espaço entre os cards
+            loop: true,       // Loop infinito
+            grabCursor: true, // Cursor de mãozinha ao passar o mouse
+            
+            // Autoplay (opcional, remova se não quiser que rode sozinho)
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+
+            // Paginação (as bolinhas)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Setas de navegação
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Pontos de quebra responsivos (Breakpoints)
+            breakpoints: {
+                // quando a tela for >= 640px (Tablet pequeno)
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // quando a tela for >= 1024px (Desktop)
+                1024: {
+                    slidesPerView: 3, // Mostra 3 cards no desktop
+                    spaceBetween: 30,
+                }
+            }
+        });
+    </script>
 
     </main>
 </body>

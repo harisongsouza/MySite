@@ -1,0 +1,24 @@
+# _data/certificados.yml
+- title: "Desenvolvimento Web Full Stack"
+  issuer: "Udemy / Cod3r"
+  date: "Dez 2023"
+  image: "/img/avatar2.jpg"
+  link: "LINK_PARA_O_CERTIFICADO_REAL"
+
+- title: "React e Redux: Fundamentos"
+  issuer: "Alura"
+  date: "Out 2023"
+  image: "https://via.placeholder.com/600x400/61dafb/000000?text=Certificado+React"
+  link: "#"
+
+- title: "UX Design Google Professional"
+  issuer: "Coursera"
+  date: "Jan 2024"
+  image: "https://via.placeholder.com/600x400/ff5722/ffffff?text=Certificado+UX"
+  link: "#"
+
+- title: "Introdução ao Git e GitHub"
+  issuer: "Digital Innovation One"
+  date: "Jul 2023"
+  image: "https://via.placeholder.com/600x400/333333/ffffff?text=Certificado+Git"
+  link: "#"

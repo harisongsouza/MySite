@@ -493,14 +493,84 @@ title: Resume
             background-color: #e9ecef;
         }
 
+
+
+        /* --- Botão Flutuante de Download --- */
+        .btn-floating-download {
+            position: fixed; /* Fica fixo na tela */
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            border-radius: 50%; /* Deixa o botão redondo */
+            box-shadow: var(--sombra-padrao);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem; /* Tamanho do ícone */
+            z-index: 1000; /* Garante que fique por cima de outros elementos */
+            transition: all 0.3s ease;
+        }
+
+        .btn-floating-download:hover {
+            transform: scale(1.1); /* Aumenta um pouco de tamanho */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Tooltip (Dica de Texto) --- */
+        .btn-floating-download::before,
+        .btn-floating-download::after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none; /* Não interfere no clique */
+            transition: all 0.3s ease;
+        }
+
+        .btn-floating-download::before {
+            content: attr(data-tooltip); /* Pega o texto do atributo data-tooltip */
+            top: -45px;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            white-space: nowrap; /* Impede que o texto quebre linha */
+        }
+
+        .btn-floating-download::after {
+            content: '';
+            top: -15px;
+            border: 5px solid transparent;
+            border-top-color: var(--cor-secundaria); /* Flechinha do balão */
+        }
+
+        .btn-floating-download:hover::before,
+        .btn-floating-download:hover::after {
+            opacity: 1; /* Mostra o tooltip no hover */
+            top: -50px; /* Move um pouco para cima */
+        }
+        .btn-floating-download:hover::after {
+            top: -20px;
+        }
+
     </style>
 </head>
 <body>
     <main class="container">
-        {% include resume-sections/journey.html %}
+        
+	{% include resume-sections/journey.html %}
         {% include resume-sections/skills.html %}
         {% include resume-sections/experience.html %}
         {% include resume-sections/resume-projects.html %}
+
+    <a href="{{ '/assets/pdf/meu-curriculo.pdf' | relative_url }}" class="btn-floating-download" target="_blank" rel="noopener noreferrer" data-tooltip="Baixar Curriculo">
+        <i class="fas fa-download"></i>
+    </a>
+
     </main>
 </body>
 </html>

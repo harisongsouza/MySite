@@ -16,7 +16,7 @@
                             <p class="date"><i class="far fa-calendar-alt"></i> {{ cert.date }}</p>
                             {% if cert.link and cert.link != "#" %}
                             <a href="{{ cert.link }}" target="_blank" rel="noopener noreferrer" class="cert-link">
-                                Ver Credencial <i class="fas fa-external-link-alt"></i>
+                                View Full <i class="fas fa-external-link-alt"></i>
                             </a>
                             {% endif %}
                         </div>
@@ -24,7 +24,8 @@
                 </div>
                 {% endfor %}
             </div>
-            
+            <br>
+            <br>
             <div class="swiper-pagination"></div>
             
             <div class="swiper-button-prev hide-mobile"></div>

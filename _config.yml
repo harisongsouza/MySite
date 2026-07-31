@@ -19,7 +19,7 @@ description: "Software Developer"
 description2: ""
 
 # Caminho para sua foto de perfil (coloque a imagem na pasta /assets/img/)
-avatar: /img/avatar.png
+avatar: /img/link.jpg
 
 # Links das redes sociais
 social:
@@ -30,11 +30,11 @@ social:
   - name: YouTube
     type: fab  # <-- Adicione essa linha
     icon: fa-youtube
-    url: ""
+    url: "https://www.youtube.com/@souza_harison"
   - name: Instagram
     type: fab  # <-- Adicione essa linha
     icon: fa-instagram
-    url: "https://www.instagram.com/harisong___/"
+    url: ""
   - name: Linkedin
     type: fab  # <-- Note que aqui é 'fas' para o envelope
     icon: fa-linkedin

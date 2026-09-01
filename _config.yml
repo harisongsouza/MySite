@@ -30,7 +30,7 @@ social:
   - name: YouTube
     type: fab  # <-- Adicione essa linha
     icon: fa-youtube
-    url: "https://www.youtube.com/@souza_harison"
+    url: "" # <-- "https://www.youtube.com/@souza_harison"
   - name: Instagram
     type: fab  # <-- Adicione essa linha
     icon: fa-instagram
@@ -42,7 +42,7 @@ social:
   - name: Tiktok
     type: fab  # <-- Note que aqui é 'fas' para o envelope
     icon: fa-tiktok
-    url: ""
+    url: "https://www.tiktok.com/@devh____"
   - name: Email
     type: fas  # <-- Note que aqui é 'fas' para o envelope
     icon: fa-envelope
